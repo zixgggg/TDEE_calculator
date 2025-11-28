@@ -37,7 +37,7 @@ def TDEE(BMR,exercise_coefficient):
 	answer=BMR*exercise_coefficient
 	return answer
 def gender_ask():
-    gender_ask=input("male or female? enter=(m/f)")
+    gender_ask=input("male or female? enter=(m/f):")
     if gender_ask=="m":
         gender="m"
         user_BMR=male_BMR(user_weight,user_height,user_age)
@@ -49,12 +49,34 @@ def gender_ask():
     else:
         print("please enter \"m\" or \"f\" ")
         return True
+def numder_check(n):
+    if n.isdigit()==False:
+        print("please enter numder")
+        return True
+    else:
+        return False
+def coefficient_check(n):
+    if n != never_exercise or light_exercise or middle_exercise or high_exercise or very_high_exercise:
+        print("please enter correct coefficient")
+        return True
+    else:
+        return False
+        
 def every_ask():
-    user_weight=float(input("enter your weight:"))
-    user_height=float(input("enter your height:"))
-    user_age=float(input("enter your age:"))
+    user_weight=input("enter your weight(kg):")
+    while numder_check(user_weight):
+        user_weight=input("enter your weight(kg):")
+    user_height=input("enter your height(cm):")
+    while numder_check(user_height):
+        user_height=input("enter your height(cm):")
+    user_age=input("enter your age:")
+    while numder_check(user_age):
+        user_height=input("enter your age:")
     print(coefficient_list)
-    user_exercise_coefficient=float(input("enter your coefficient:"))
+    user_exercise_coefficient=input("enter your coefficient:")
+    while coefficient_check(user_exercise_coefficient):
+        user_exercise_coefficient=input("enter your coefficient:")
+        
     while gender_ask():
         gender_ask()
 def BT_output():
