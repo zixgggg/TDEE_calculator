@@ -56,19 +56,25 @@ def numder_check(n):
     else:
         return False
 def coefficient_check(n):
-    if n != never_exercise or light_exercise or middle_exercise or high_exercise or very_high_exercise:
+    all_coefficient=["1.2","1.375","1.55","1.725","1.9"]
+    if n not in all_coefficient:
         print("please enter correct coefficient")
         return True
     else:
         return False
         
 def every_ask():
+    global user_weight
     user_weight=input("enter your weight(kg):")
     while numder_check(user_weight):
         user_weight=input("enter your weight(kg):")
+        
+    global user_height    
     user_height=input("enter your height(cm):")
     while numder_check(user_height):
         user_height=input("enter your height(cm):")
+
+    global user_age
     user_age=input("enter your age:")
     while numder_check(user_age):
         user_age=input("enter your age:")
