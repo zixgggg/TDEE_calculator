@@ -71,7 +71,7 @@ def every_ask():
         user_height=input("enter your height(cm):")
     user_age=input("enter your age:")
     while numder_check(user_age):
-        user_height=input("enter your age:")
+        user_age=input("enter your age:")
     print(coefficient_list)
     user_exercise_coefficient=input("enter your coefficient:")
     while coefficient_check(user_exercise_coefficient):
